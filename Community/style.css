@@ -1,0 +1,346 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    position: relative;
+}
+
+li a {
+    font-size: 18px;
+    margin-right: 15px;
+    display: block;
+    padding: 20px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+header nav {
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 10px rgb(11, 11, 11);
+    height: 70px;
+    background-color: white;
+    z-index: 1000;
+}
+
+header nav .logo img {
+    width: 50px;
+    cursor: pointer;
+    margin: 7px 0px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 3%);
+}
+
+header nav .icon i {
+    font-size: 20px;
+    margin: 0 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header nav li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+header nav li a:active {
+    color: hsl(0, 0%, 44%);
+    text-decoration: underline;
+}
+
+header nav .icon i:hover {
+    color: red;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 54%);
+    border: 1px solid rgb(204, 204, 204);
+    border-top: none;
+    z-index: 1;
+    top: 100%;
+    min-width: 150px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px 15px;
+    text-align: left;  
+    color: hsl(0, 0%, 3%);
+}
+
+.dropdown-menu li a:hover {
+    color: hsl(0, 1%, 81%);
+    background-color: hsl(0, 0%, 44%);
+    text-decoration: none;
+}
+
+
+/*This is for styling and positioning the main */
+.intro {
+    font-size: 1rem;
+    margin:25px;
+    padding:15px;
+    border:5px;
+    background-image: url(image/background.jpg); 
+    height: 800px;
+    background-size:cover;
+    background-position:center;
+    /*
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment: fixed;/*Specifies whether a background scrolls or it is fixed.
+    background-size:cover*/
+}.intro h1{
+    position: relative;
+    padding:5px;
+    text-align: center;
+    font-size:3rem;
+    color :hsl(0, 0%, 0%);
+    
+    
+}
+.intro h3{
+    position:relative;
+    text-align:center;
+    color :hsl(0, 0%, 0%);
+}
+
+
+.intro #title{
+    margin-top:200px;
+}
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 30px;
+    gap:10px;
+}
+.images a {
+    position: relative;
+    display: block;
+}
+
+.images img {
+    height:100%;
+    width:100%;
+    display: block;
+}
+.images .description {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    padding:100px 0;
+    color:hsl(0, 0%, 15%);
+    display:none;
+}
+.images a:hover .description{
+    text-align:center;
+    display:block;
+    top:0;
+    bottom:0;
+    background-color:hsl(0, 0%, 44%);
+}
+.order{
+    position:relative;
+    font-size:1.3rem;
+    padding:30px;
+    background-color:hsl(0, 100%, 30%);
+    right:0;
+    left:47%;
+    margin:30px;
+    cursor:pointer;
+    display: inline-block;
+    transition: background-color 0.7s;
+}
+.order:hover{
+    background-color:hsl(0, 100%, 50%);
+}
+.order:active + form {
+    display: block;
+}
+form{
+
+    margin-left: 35%;
+}
+.form-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-right: 150px;
+    max-width: 30%;
+}
+
+.form-column {
+    align-items:50%;
+    margin-left:50%;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.about {
+    display: flex;
+    border: 1px solid;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 20px;
+  }
+
+  .bg-image {
+    width: 40%; 
+    background-image: url('image/bg2.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+  }
+  .about-content {
+    width: 70%; 
+    padding: 20px;
+    text-align: center;
+  }
+
+  .about .icon i {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .about table {
+    margin: 0 auto;
+    border-width: 10px;
+    border-collapse: separate;
+  }
+  .about table td, th {
+    padding: 10px;
+    border: 1px solid;
+    border-collapse: separate;
+  }
+.firstline{
+    color:hsl(0, 100%, 30%);
+  }
+
+  .review-class{
+    display:grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    padding: 100px;
+    
+  }
+  .review-class .reviews{
+    background-color: hsl(0, 0%, 82%);
+    height: 100%;
+    padding: 30px;
+  }
+  .review-class .reviews i{
+    margin-top: 15px;
+  }
+  
+  .home-socials {
+    background-image: url('image/background2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    color: hsl(0, 0%, 5%);; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:500px;
+}
+
+.home-socials p {
+    margin-bottom: 20px;
+    font-size: 2rem;
+
+}
+
+.home-socials .icons a {
+    margin: 0 10px;
+    color: hsl(0, 0%, 0%);
+    font-size: 1.5rem;
+}
+
+.home-socials .icons a:hover {
+    color: hsl(0, 100%, 30%);
+}
+
+/* Styling and positioning of the footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+    padding-top: 70px; 
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: #f1f1f1;
+    padding: 20px;
+    flex: 1;
+}
+section article {
+    text-align: center;
+}
+.socials {
+    cursor: pointer;
+    text-decoration: none;
+}
+.socials i {
+    padding: 3px;
+}
+.socials a:visited {
+    color: hsl(0, 0%, 3%);
+}
+.socials i:hover {
+    color: hsl(0, 100%, 50%);
+}
+footer #credit{
+    text-align:center;
+    font-size:1.2rem;
+    background-color: hsl(0, 100%, 30%);
+}
+footer #credit{
+    text-align:center;
+    font-size:1.2rem;
+    background-color: hsl(0, 100%, 30%);
+}
