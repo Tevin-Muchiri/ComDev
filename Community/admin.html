@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="admin.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Basic CSS for better footer layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1em 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            position: relative;
+            margin: 0 1em;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li ul.dropdown-menu li {
+            margin: 0;
+        }
+        nav ul li ul.dropdown-menu li a {
+            padding: 0.5em 1em;
+            display: block;
+            color: #fff;
+        }
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+        main {
+            padding: 2em;
+        }
+        footer {
+            background: #f1f1f1;
+            padding: 2em 1em;
+            text-align: center;
+        }
+        footer section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        footer article {
+            flex: 1;
+            min-width: 200px;
+            margin: 1em;
+        }
+        footer article h2 {
+            margin-top: 0;
+        }
+        .socials a {
+            margin-right: 10px;
+        }
+        #credit {
+            text-align: center;
+            width: 100%;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="image/logo.png" alt="Logo">
+                <a href="index.html"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="projects.html">Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Food shortages</a></li>
+                        <li><a href="#">Infrastructure Development</a></li>
+                        <li><a href="#">Youth Development</a></li>
+                        <li><a href="#">Emerging problems</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="media.html">Media</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Images</a></li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </li>
+                <li><a href="volunteer.html">Volunteer Opportunities</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="success_stories.html">Success Stories</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">Offices</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Vision</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Team</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Admin Page</h1>
+        <section id="user-management">
+            <h2>User Management</h2>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User data will be populated here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <section id="content-management">
+            <h2>Content Management</h2>
+            <form id="project-form">
+                <label for="project-title">Project Title:</label>
+                <input type="text" id="project-title" name="project-title" required>
+                <label for="project-description">Project Description:</label>
+                <textarea id="project-description" name="project-description" required></textarea>
+                <button type="submit">Add Project</button>
+            </form>
+            <div id="project-list">
+                <!-- Project listings will be managed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <article>
+                <h2>Location</h2>
+                <p>Nairobi</p>
+                <p>Kiambu</p>
+                <p>Machakos</p>
+                <p>Moyale</p>
+                <p>Kisii</p>
+            </article>
+            <article>
+                <h2>Quick Links</h2>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="projects.html">Projects</a></p>
+                <p><a href="media.html">Media</a></p>
+                <p><a href="review.html">Review</a></p>
+                <p><a href="shop.html">Shop</a></p>
+                <p><a href="account.html">Account</a></p>
+            </article>
+            <article>
+                <h2>Contacts</h2>
+                <p>+254 746241238</p>
+                <p>+254 712120909</p>
+                <p><a href="mailto:comdev@gmail.com">comdev@gmail.com</a></p>
+                <p><a href="mailto:comdevs@gmail.com">comdevs@gmail.com</a></p>
+            </article>
+            <article>
+                <h2>Our Services</h2>
+                <p>Develop Society</p>
+                <p>Develop Youth</p>
+                <p>Food Shortages</p>
+                <p>Emerging Problems</p>
+            </article>
+            <article class="socials">
+                <h2>Social Media</h2>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
+                <a href="https://ke.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok fa-lg"></i></a>
+            </article>
+        </section>
+        <p id="credit">Made with ❤️ by ComDeveloper</p>
+    </footer>
+</body>
+</html>
