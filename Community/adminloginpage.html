@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="admin.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <style>
         /* Additional CSS for the eye button */
         .password-toggle {
@@ -25,97 +22,53 @@
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="about.html">About us</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#">Offices</a></li>
-                        <li><a href="#">Mission</a></li>
-                        <li><a href="#">Vision</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Team</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="projects.html">Projects</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Food shortages</a></li>
-                        <li><a href="#">Infrastructure Development</a></li>
-                        <li><a href="#">Youth Development</a></li>
-                        <li><a href="#">Emerging problems </a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="media.html">Media</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Images</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">News</a></li>
-                    </ul>
-                </li>
-                <li><a href="review.html">Review</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="account.html">Account</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Admin Page</h1>
-        <h2>User Management</h2>
-        <table id="user-table">
-            <thead>
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- User data will be populated here by JavaScript -->
-            </tbody>
-        </table>
-    </main>
-    <footer>
-        <section>
-            <article>
-                <h2>Location</h2>
-                <p>Nairobi</p>
-                <p>Kiambu</p>
-                <p>Machakos</p>
-                <p>Moyale</p>
-                <p>Kisii</p>
-            </article>
-            <article>
-                <h2>Quick Links</h2>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="about.html">About Us</a></p>
-                <p><a href="projects.html">Projects</a></p>
-                <p><a href="media.html">Media</a></p>
-                <p><a href="review.html">Review</a></p>
-                <p><a href="shop.html">Shop</a></p>
-                <p><a href="account.html">Account</a></p>
-            </article>
-            <article>
-                <h2>Contacts</h2>
-                <p>+254 746241238</p>
-                <p>+254 712120909</p>
-                <p><a href="mailto:comdev@gmail.com">comdev@gmail.com</a></p>
-                <p><a href="mailto:comdevs@gmail.com">comdevs@gmail.com</a></p>
-            </article>
-            <article>
-                <h2>Our Services</h2>
-                <p>Develop Society</p>
-                <p>Develop Youth</p>
-                <p>Food Shortages</p>
-                <p>Emerging Problems</p>
-            </article>
-            <article class="socials">
-                <h2>Social Media</h2>
-                <a href="https://www.instagram.com" target
+    <h1>Admin Login</h1>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <div class="password-toggle">
+            <input type="password" id="password" name="password" required>
+            <span class="toggle-btn" onclick="togglePassword()">&#128065;</span>
+        </div><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form data
+            var formData = new FormData(this);
+
+            // Perform login validation (replace with your own logic)
+            var username = formData.get("username");
+            var password = formData.get("password");
+
+            // Check if username and password are correct
+            // For demo purposes, let's assume they are correct
+            if (username === "admin" && password === "admin123") {
+                // Redirect to project management page
+                window.location.href = "admin-project-input.html";
+            } else {
+                // Handle incorrect login (display error message, etc.)
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var toggleButton = document.querySelector(".toggle-btn");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleButton.innerHTML = "&#128064;"; // Change eye to eye-slash
+            } else {
+                passwordField.type = "password";
+                toggleButton.innerHTML = "&#128065;"; // Change eye-slash to eye
+            }
+        }
+    </script>
+</body>
+</html>
